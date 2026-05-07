@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Maravella For Handicrafts</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="about.css" />
+</head>
+
+<body>
+
+  <header class="main-header">
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Maravella Logo" width="120">
+      <h1>Maravella For Handicrafts</h1>
+    </div>
+    <div class="mission-statement">
+      <p>Our mission is to inspire creativity by teaching practical handicrafts through simple, step-by-step guidance.</p>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Course Content</a></li>
+      <li><a href="about_us.html">About Us</a></li>
+      <li><a href="contact_us.html">Contact Us</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <main class="about-page">
+    <p class="breadcrumb">
+      <a href="index.html">Home</a> &gt;
+      <strong>About Us</strong>
+    </p>
+
+    <section class="about-hero">
+      <h2 class="about-title">About Us</h2>
+      <p class="about-intro">
+        Our instructors are friendly makers who teach with clear steps and supportive feedback to help beginners learn with confidence.
+      </p>
+    </section>
+
+    <div class="about-controls">
+      <label class="sort-label" for="sortSelect">Sort By</label>
+      <select id="sortSelect" class="sort-select" aria-label="Sort instructors">
+        <optgroup label="Name">
+          <option value="name-az" selected>Name (A-Z)</option>
+          <option value="name-za">Name (Z-A)</option>
+        </optgroup>
+        <optgroup label="Years Of Experience">
+          <option value="exp-hl">Years Of Experience (High - Low)</option>
+          <option value="exp-lh">Years Of Experience (Low - High)</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <h3 class="team-title">Our Creative Team</h3>
+
+    <section class="teachers-section">
+      <div class="teachers-scroller" id="teachersContainer">
+
+        <article class="teacher-card" data-name="Sadeem" data-exp="13">
+          <img class="teacher-img" src="images/sadeem.jpeg" alt="Ms. Sadeem">
+          <div class="teacher-role">Crochet Instructor</div>
+          <div class="teacher-name">Ms. Sadeem</div>
+          <p class="teacher-bio">
+            Specializes in beginner-friendly crochet stitches and practical tips that help learners improve step by step.
+          </p>
+          <div class="teacher-exp">13+ Years Of Experience</div>
+        </article>
+
+        <article class="teacher-card" data-name="Hams" data-exp="4">
+          <img class="teacher-img" src="images/hams.jpeg" alt="Ms. Hams">
+          <div class="teacher-role">Pottery Instructor</div>
+          <div class="teacher-name">Ms. Hams</div>
+          <p class="teacher-bio">
+            Focuses on shaping, glazing, and creative ceramic projects with a calm approach that makes learning easy and fun.
+          </p>
+          <div class="teacher-exp">4+ Years Of Experience</div>
+        </article>
+
+        <article class="teacher-card" data-name="Jouri" data-exp="11">
+          <img class="teacher-img" src="images/jouri.jpeg" alt="Ms. Jouri">
+          <div class="teacher-role">Paper Flowers Instructor</div>
+          <div class="teacher-name">Ms. Jouri</div>
+          <p class="teacher-bio">
+            Loves teaching realistic paper flowers using simple materials, with clear steps that help students create beautiful results.
+          </p>
+          <div class="teacher-exp">11+ Years Of Experience</div>
+        </article>
+
+        <article class="teacher-card" data-name="Laura" data-exp="15">
+          <img class="teacher-img" src="images/laura.jpeg" alt="Ms. Laura">
+          <div class="teacher-role">Candle Instructor</div>
+          <div class="teacher-name">Ms. Laura</div>
+          <p class="teacher-bio">
+            Teaches candle-making basics and safety tips, helping students create cozy, scented candles with neat finishing touches.
+          </p>
+          <div class="teacher-exp">15+ Years Of Experience</div>
+        </article>
+
+        <article class="teacher-card" data-name="Retal" data-exp="18">
+          <img class="teacher-img" src="images/retal.jpeg" alt="Ms. Retal">
+          <div class="teacher-role">Embroidery Instructor</div>
+          <div class="teacher-name">Ms. Retal</div>
+          <p class="teacher-bio">
+            Guides students through clean embroidery foundations, from thread handling to simple patterns and finishing details.
+          </p>
+          <div class="teacher-exp">18+ Years Of Experience</div>
+        </article>
+
+        <article class="teacher-card" data-name="Lujain" data-exp="6">
+          <img class="teacher-img" src="images/lujain.jpeg" alt="Ms. Lujain">
+          <div class="teacher-role">Jewelry Instructor</div>
+          <div class="teacher-name">Ms. Lujain</div>
+          <p class="teacher-bio">
+            Enjoys teaching jewelry basics such as assembling pieces, simple wiring, and creating balanced handmade designs.
+          </p>
+          <div class="teacher-exp">6+ Years Of Experience</div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-left">
+      <div class="social-media">
+        <p>Find Us</p>
+        <a href="#">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="#">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="4" x2="20" y2="20"></line><line x1="20" y1="4" x2="4" y2="20"></line></svg>
+        </a>
+        <a href="#">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-center">
+      <img src="images/logo.png" alt="Maravella Logo" width="120">
+      <p>&copy; 2026 Maravella. All Rights Reserved.</p>
+    </div>
+
+    <div class="footer-right">
+      <div class="contact-info">
+        <p>Contact info</p>
+        <p>Email: <a href="mailto:info@maravella.com">info@maravella.com</a></p>
+        <p>Phone: +966 5X XXX XXXX</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+
+    const sortSelect = document.getElementById("sortSelect");
+    const teachersContainer = document.getElementById("teachersContainer");
+
+    sortSelect.addEventListener("change", function () {
+      const cards = Array.from(teachersContainer.querySelectorAll(".teacher-card"));
+      const sortValue = sortSelect.value;
+
+      cards.sort(function (a, b) {
+        const nameA = a.dataset.name.toLowerCase();
+        const nameB = b.dataset.name.toLowerCase();
+        const expA = Number(a.dataset.exp);
+        const expB = Number(b.dataset.exp);
+
+        if (sortValue === "name-az") {
+          return nameA.localeCompare(nameB);
+        } else if (sortValue === "name-za") {
+          return nameB.localeCompare(nameA);
+        } else if (sortValue === "exp-hl") {
+          return expB - expA;
+        } else if (sortValue === "exp-lh") {
+          return expA - expB;
+        }
+      });
+
+      teachersContainer.innerHTML = "";
+      cards.forEach(function (card) {
+        teachersContainer.appendChild(card);
+      });
+    });
+  </script>
+
+</body>
+</html>

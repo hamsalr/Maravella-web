@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard | Maravella For Handicrafts</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Maravella Logo" width="120">
+      <h1>Maravella For Handicrafts</h1>
+    </div>
+    <div class="mission-statement">
+      <p>Our mission is to inspire creativity by teaching practical handicrafts through simple, step-by-step guidance.</p>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Course Content</a></li>
+      <li><a href="about_us.html">About Us</a></li>
+      <li><a href="contact_us.html">Contact Us</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-content">
+    <p class="breadcrumb">
+    <a href="index.html">Home</a> &gt;
+    <strong>Dashboard</strong>
+</p>
+
+    <section class="dashboard-page">
+      <h2 class="page-title">Student Dashboard</h2>
+      <p class="subtitle">Welcome Student</p>
+
+      
+
+<div class="dashboard-table-wrapper">
+    <table class="dashboard-table">
+        <thead>
+            <tr>
+                <th>Lessons</th>
+                <th>Scores</th>
+            </tr>
+        </thead>
+        <tbody id="scores-body"></tbody>
+    </table>
+</div>
+      <div class="dashboard-links">
+        <a href="my-notes.html" class="outline-btn">My Notes</a>
+        <a href="teacher-evaluation.html" class="outline-btn">Teacher Evaluation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-left">
+      <div class="social-media">
+        <p>Find Us</p>
+        <a href="#">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <a href="#">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="4" x2="20" y2="20"></line>
+            <line x1="20" y1="4" x2="4" y2="20"></line>
+          </svg>
+        </a>
+        <a href="#">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-center">
+      <img src="images/logo.png" alt="Maravella Logo" width="120">
+      <p>&copy; 2026 Maravella. All Rights Reserved.</p>
+    </div>
+
+    <div class="footer-right">
+      <div class="contact-info">
+        <p>Contact info</p>
+        <p>Email: <a href="mailto:info@maravella.com">info@maravella.com</a></p>
+        <p>Phone: +966 5X XXX XXXX</p>
+      </div>
+    </div>
+  </footer>
+
+
+<script>
+  /* Phase 3 - My Notes JavaScript
+   Requirements:
+   - Display notes with checkboxes
+   - Delete selected notes with alert/confirm
+   - Add/save note with validation
+   - Store saved notes in localStorage
+   - Color added note based on priority: 1 Red, 2 Yellow, 3 Green
+*/
+
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark-mode");
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const tbody = document.getElementById("scores-body");
+    const tableWrapper = document.querySelector(".dashboard-table-wrapper");
+
+    const scores = JSON.parse(localStorage.getItem("quizScores") || "[]");
+
+    tbody.innerHTML = "";
+
+    if (scores.length === 0) {
+        tableWrapper.innerHTML = "<p>No quiz scores available yet.</p>";
+        return;
+    }
+
+    scores.forEach(function (item) {
+        const row = document.createElement("tr");
+
+        const lessonCell = document.createElement("td");
+        lessonCell.textContent = item.lesson || "Lesson";
+
+        const scoreCell = document.createElement("td");
+        scoreCell.textContent = item.score || "None";
+
+        row.appendChild(lessonCell);
+        row.appendChild(scoreCell);
+        tbody.appendChild(row);
+    });
+});
+</script>
+
+</body>
+</html>

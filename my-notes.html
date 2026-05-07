@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Notes | Maravella For Handicrafts</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Maravella Logo" width="120">
+      <h1>Maravella For Handicrafts</h1>
+    </div>
+
+    <div class="mission-statement">
+      <p>
+        Our mission is to inspire creativity by teaching
+        practical handicrafts through simple, step-by-step guidance.
+      </p>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Course Content</a></li>
+      <li><a href="about_us.html">About Us</a></li>
+      <li><a href="contact_us.html">Contact Us</a></li>
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-content">
+    <p class="breadcrumb">
+      <a href="index.html">Home</a> &gt;
+      <a href="dashboard.html">Dashboard</a> &gt;
+      <strong>My Notes</strong>
+    </p>
+
+    <section class="notes-page">
+      <h2 class="page-title">My Notes</h2>
+
+      <div class="notes-layout">
+
+        <div>
+          <h3 class="notes-title">Saved Notes</h3>
+
+          <div class="saved-notes-box">
+
+       
+            <form id="delete-notes-form" action="#" method="post">
+              <div class="notes-header-row">
+                <button class="small-primary-btn" type="button" id="save-notes-btn">Save</button>
+       
+                <button class="delete-btn" type="button" id="delete-notes-btn">Delete Selected Note</button>
+              </div>
+
+              <div class="notes-cards">
+
+                <div class="note-card">
+                  <div class="note-card-top">
+                    <div class="note-title-left">
+                 
+                      <input class="note-checkbox" type="checkbox" name="deleteNote" value="note1" />
+                    </div>
+                    <span class="saved-note-title">Note Title</span>
+                    <span class="saved-note-priority">Priority 1</span>
+                  </div>
+
+                  <div class="note-content">
+                    <img src="images/note3.jpeg" class="note-img" alt="Note image">
+                    <p class="note-text">
+                      I need to go back to the pottery-making steps because I didn’t have enough clay to make a cup.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="note-card">
+                  <div class="note-card-top">
+                    <div class="note-title-left">
+                      <input class="note-checkbox" type="checkbox" name="deleteNote" value="note2" />
+                    </div>
+                    <span class="saved-note-title">Note Title</span>
+                    <span class="saved-note-priority">Priority 2</span>
+                  </div>
+
+                  <div class="note-content">
+                    <img src="images/note1.jpeg" class="note-img" alt="Note image">
+                    <p class="note-text">
+                      I need to review the candle-making lesson, especially the wax melting point and the correct temperature for melting it.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="note-card">
+                  <div class="note-card-top">
+                    <div class="note-title-left">
+                      <input class="note-checkbox" type="checkbox" name="deleteNote" value="note3" />
+                    </div>
+                    <span class="saved-note-title">Note Title</span>
+                    <span class="saved-note-priority">Priority 3</span>
+                  </div>
+
+                  <div class="note-content">
+                    <img src="images/note2.jpeg" class="note-img" alt="Note image">
+                    <p class="note-text">
+                      I need more colored paper, such as pink, yellow, and light blue, to make my flowers look more vibrant and full of life.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="add-note-title">Add New Note</h3>
+
+          <div class="add-note-row">
+            <div class="add-note-card">
+              <form action="#" method="post">
+                <div class="add-note-form-grid">
+                  <div>
+                    <div class="form-group">
+                      <input type="text" id="title" name="title" placeholder="Title..." />
+                    </div>
+
+                    <div class="form-group">
+                      <textarea id="content" name="content" placeholder="Write Your New Notes Here..."></textarea>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="form-group">
+                      <label for="priority">Priority</label>
+                     <select id="priority" name="priority">
+    <option value="">Select Priority</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+</select>
+                    </div>
+
+                    <div class="add-note-actions">
+                      <button type="button" class="small-primary-btn" id="add-note-btn">Add</button>
+                    </div>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+
+            <div class="back-notes-side">
+              <a href="dashboard.html" class="purple-btn">Back To Dashboard</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-left">
+      <div class="social-media">
+        <p>Find Us</p>
+
+        <a href="#" aria-label="Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+
+        <a href="#" aria-label="X">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="4" x2="20" y2="20"></line>
+            <line x1="20" y1="4" x2="4" y2="20"></line>
+          </svg>
+        </a>
+
+        <a href="#" aria-label="Facebook">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-center">
+      <img src="images/logo.png" alt="Maravella Logo" width="120">
+      <p>&copy; 2026 Maravella. All Rights Reserved.</p>
+    </div>
+
+    <div class="footer-right">
+      <div class="contact-info">
+        <p>Contact info</p>
+        <p>Email: <a href="mailto:info@maravella.com">info@maravella.com</a></p>
+        <p>Phone: +966 5X XXX XXXX</p>
+      </div>
+    </div>
+  </footer>
+
+
+<script>
+  /* Phase 3 - My Notes JavaScript
+   Requirements:
+   - Display notes with checkboxes
+   - Delete selected notes with alert/confirm
+   - Add/save note with validation
+   - Store saved notes in localStorage
+   - Color added note based on priority: 1 Red, 2 Yellow, 3 Green
+*/
+
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark-mode");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const notesContainer = document.querySelector(".notes-cards");
+    const titleInput = document.getElementById("title");
+    const contentInput = document.getElementById("content");
+    const priorityInput = document.getElementById("priority");
+    const addBtn = document.getElementById("add-note-btn");
+    const saveBtn = document.getElementById("save-notes-btn");
+    const deleteBtn = document.getElementById("delete-notes-btn");
+
+    function getPriorityColor(priority) {
+        if (priority === "1") return "#ffd6d6";   // Red
+        if (priority === "2") return "#fff3b8";   // Yellow
+        return "#d8f8d2";                         // Green
+    }
+
+    function escapeHTML(text) {
+        return String(text)
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#039;");
+    }
+function collectNotesFromPage() {
+    const cards = notesContainer.querySelectorAll(".note-card");
+    const notes = [];
+
+    cards.forEach(function (card) {
+
+        const title =
+            card.querySelector(".saved-note-title")?.textContent.trim()
+            || "Note Title";
+
+        const priorityText =
+            card.querySelector(".saved-note-priority")?.textContent.trim()
+            || "Priority 1";
+
+        const priority =
+            priorityText.replace("Priority", "").trim()
+            || "1";
+
+        const content =
+            card.querySelector(".note-text")?.textContent.trim()
+            || "";
+
+        const image =
+            card.querySelector("img")
+            ? card.querySelector("img").getAttribute("src")
+            : "";
+
+        notes.push({
+            title,
+            content,
+            priority,
+            image
+        });
+
+    });
+
+    return notes;
+}
+
+    function saveNotesToLocalStorage() {
+        const notes = collectNotesFromPage();
+        localStorage.setItem("studentNotes", JSON.stringify(notes));
+    }
+
+    function createNoteCard(note) {
+        const card = document.createElement("div");
+        card.className = "note-card";
+        card.style.backgroundColor = getPriorityColor(note.priority);
+		let imageSrc = note.image;
+
+if (!imageSrc) {
+    if (note.priority === "1") {
+        imageSrc = "images/note3.jpeg";
+    } else if (note.priority === "2") {
+        imageSrc = "images/note2.jpeg";
+    } else {
+        imageSrc = "images/note1.jpeg";
+    }
+}
+
+        card.innerHTML = `
+            <div class="note-card-top">
+                <div class="note-title-left">
+                    <input class="note-checkbox" type="checkbox" name="deleteNote">
+                </div>
+                <span class="saved-note-title">${escapeHTML(note.title || "Note Title")}</span>
+                <span class="saved-note-priority">Priority ${escapeHTML(note.priority)}</span>
+            </div>
+<div class="note-content">
+${imageSrc ? `<img src="${imageSrc}" alt="Note image" class="note-img">` : ""}
+  <p class="note-text">${escapeHTML(note.content)}</p>
+</div>
+        `;
+
+        return card;
+    }
+
+    function loadNotesFromLocalStorage() {
+        const savedNotes = JSON.parse(localStorage.getItem("studentNotes") || "[]");
+
+        if (savedNotes.length > 0) {
+            notesContainer.innerHTML = "";
+            savedNotes.forEach(function (note) {
+                notesContainer.appendChild(createNoteCard(note));
+            });
+        }
+    }
+
+    loadNotesFromLocalStorage();
+
+    if (addBtn) {
+        addBtn.addEventListener("click", function () {
+            const title = titleInput.value.trim();
+            const content = contentInput.value.trim();
+            const priority = priorityInput.value;
+
+            if (content === "" || content.length < 30) {
+                alert("Note description is empty or too short. It must be at least 30 characters.");
+                contentInput.focus();
+                return;
+            }
+
+            if (priority === "") {
+                alert("Please select a priority.");
+                priorityInput.focus();
+                return;
+            }
+			let noteImage = "";
+
+if (priority === "1") {
+    noteImage = "images/note3.jpeg";
+} else if (priority === "2") {
+    noteImage = "images/note2.jpeg";
+} else {
+    noteImage = "images/note1.jpeg";
+}
+
+const newNote = {
+    title: title || "Note Title",
+    content: content,
+    priority: priority,
+    image: noteImage
+};
+
+            notesContainer.appendChild(createNoteCard(newNote));
+            
+
+            titleInput.value = "";
+            contentInput.value = "";
+            priorityInput.value = "";
+
+            alert("Note added successfully.");
+        });
+    }
+
+    if (saveBtn) {
+        saveBtn.addEventListener("click", function () {
+            saveNotesToLocalStorage();
+            alert("Notes saved successfully.");
+        });
+    }
+
+    if (deleteBtn) {
+        deleteBtn.addEventListener("click", function () {
+            const selected = notesContainer.querySelectorAll(".note-checkbox:checked");
+
+            if (selected.length === 0) {
+                alert("Please select at least one note.");
+                return;
+            }
+
+            if (confirm("Are you sure you want to delete the selected note(s)?")) {
+                selected.forEach(function (checkbox) {
+                    checkbox.closest(".note-card").remove();
+                });
+
+                saveNotesToLocalStorage();
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>

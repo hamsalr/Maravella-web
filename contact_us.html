@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Maravella For Handicrafts</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+  <header class="main-header">
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Maravella Logo" width="120">
+      <h1>Maravella For Handicrafts</h1>
+    </div>
+
+    <div class="mission-statement">
+      <p>Our mission is to inspire creativity by teaching practical handicrafts through simple, step-by-step guidance.</p>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Course Content</a></li>
+      <li><a href="about_us.html">About Us</a></li>
+      <li><a href="contact_us.html">Contact Us</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <main class="contact-page">
+    <p class="breadcrumb">
+      <a href="index.html">Home</a> &gt;
+      <strong>Contact Us</strong>
+    </p>
+
+    <h2 class="contact-title">Contact Us</h2>
+    <p class="contact-subtitle">Do You Have Any Questions Or Suggestions?</p>
+
+    <section class="contact-box">
+      <form class="contact-form" id="contactForm" action="#" method="post">
+        
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="FirstName LastName" />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="example@email.com" />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write Here........."></textarea>
+
+        <div class="contact-actions">
+          <button type="submit" class="contact-submit">Submit</button>
+        </div>
+
+      </form>
+    </section>
+
+    <p class="contact-footer-text">We Would Love To Hear From You.</p>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-left">
+      <div class="social-media">
+        <p>Find Us</p>
+
+        <a href="#" aria-label="Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+
+        <a href="#" aria-label="X">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="4" x2="20" y2="20"></line>
+            <line x1="20" y1="4" x2="4" y2="20"></line>
+          </svg>
+        </a>
+
+        <a href="#" aria-label="Facebook">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-center">
+      <img src="images/logo.png" alt="Maravella Logo" width="120">
+      <p>&copy; 2026 Maravella. All Rights Reserved.</p>
+    </div>
+
+    <div class="footer-right">
+      <div class="contact-info">
+        <p>Contact info</p>
+        <p>Email: <a href="mailto:info@maravella.com">info@maravella.com</a></p>
+        <p>Phone: +966 5X XXX XXXX</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+
+    const contactForm = document.getElementById("contactForm");
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const messageInput = document.getElementById("message");
+
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      nameInput.classList.remove("input-error");
+      emailInput.classList.remove("input-error");
+      messageInput.classList.remove("input-error");
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const message = messageInput.value.trim();
+
+      let errorMessage = "";
+
+      if (name === "") {
+        errorMessage += "Name field is required.\n";
+        nameInput.classList.add("input-error");
+      } else {
+        const startsWithNumber = /^[0-9]/.test(name);
+        const fullNamePattern = /^[A-Za-z]+\s+[A-Za-z]+$/;
+
+        if (startsWithNumber) {
+          errorMessage += "Name cannot start with a number.\n";
+          nameInput.classList.add("input-error");
+        }
+
+        if (!fullNamePattern.test(name)) {
+          errorMessage += "Name should be a full name, such as FirstName LastName.\n";
+          nameInput.classList.add("input-error");
+        }
+      }
+
+      if (email === "") {
+        errorMessage += "Email field is required.\n";
+        emailInput.classList.add("input-error");
+      } else {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+          errorMessage += "Please enter a valid email address.\n";
+          emailInput.classList.add("input-error");
+        }
+      }
+
+      if (message === "") {
+        errorMessage += "Message field is required.\n";
+        messageInput.classList.add("input-error");
+      }
+
+      if (errorMessage !== "") {
+        alert(errorMessage);
+      } else {
+        alert("Thank you, " + name + ". Your message has been sent successfully.");
+        contactForm.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result - Maravella</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="result.css" />
+
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Maravella Logo" width="120">
+            <h1>Maravella For Handicrafts</h1>
+        </div>
+
+        <div class="mission-statement">
+            <p>Our mission is to inspire creativity by teaching practical handicrafts through simple, step-by-step guidance.</p>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Course Content</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+
+        <button id="themeToggle" class="theme-btn">Dark Mode</button>
+    </nav>
+
+    <main class="page-content">
+        <p class="breadcrumb">
+            <a href="index.html">Home</a> &gt;
+            <a href="courses.html">Course Content</a> &gt;
+            <a href="#" id="lessonNameBreadcrumb">Quiz</a> &gt;
+            <strong>Result</strong>
+        </p>
+
+        <section class="result-page">
+            <h2 class="page-title" id="resultTitle">Quiz Result</h2>
+
+            <div class="score-section">
+                <p class="score-label">Your Score</p>
+                <div class="score-circle" id="currentScore">0/10</div>
+                <p class="best-score" id="bestScore">Best Score 0/10</p>
+            </div>
+
+            <p class="feedback-msg" id="feedbackMsg">Great Job! Review The Lesson Again To Improve Your Score.</p>
+
+            <div class="btn-group">
+                <a href="#" class="result-btn" id="retakeBtn">Retake Quiz</a>
+                <a href="courses.html" class="result-btn">Go To Course Content</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-left">
+            <div class="social-media">
+                <p>Find Us</p>
+
+                <a href="#" aria-label="Instagram">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+
+                <a href="#" aria-label="X">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="4" y1="4" x2="20" y2="20"></line>
+                        <line x1="20" y1="4" x2="4" y2="20"></line>
+                    </svg>
+                </a>
+
+                <a href="#" aria-label="Facebook">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-center">
+            <img src="images/logo.png" alt="Maravella Logo" width="120">
+            <p>&copy; 2026 Maravella. All Rights Reserved.</p>
+        </div>
+
+        <div class="footer-right">
+            <div class="contact-info">
+                <p>Contact info</p>
+                <p>Email: <a href="mailto:info@maravella.com">info@maravella.com</a></p>
+                <p>Phone: +966 5X XXX XXXX</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById("themeToggle");
+
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark-mode");
+            if (themeToggle) {
+                themeToggle.textContent = "Light Mode";
+            }
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener("click", function () {
+                document.body.classList.toggle("dark-mode");
+
+                if (document.body.classList.contains("dark-mode")) {
+                    localStorage.setItem("theme", "dark");
+                    themeToggle.textContent = "Light Mode";
+                } else {
+                    localStorage.setItem("theme", "light");
+                    themeToggle.textContent = "Dark Mode";
+                }
+            });
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const lessonKey = urlParams.get("lesson");
+
+        const lessonData = {
+            crochet: {
+                title: "Crochet Quiz Result",
+                name: "Crochet",
+                quizPage: "crochet_quiz.html"
+            },
+            paperflowers: {
+                title: "Paper Flowers Quiz Result",
+                name: "Paper Flowers",
+                quizPage: "paperflowers_quiz.html"
+            },
+            pottery: {
+                title: "Pottery Quiz Result",
+                name: "Pottery",
+                quizPage: "pottery_quiz.html"
+            },
+            candlemaking: {
+                title: "Candle Making Quiz Result",
+                name: "Candle Making",
+                quizPage: "candlemaking_quiz.html"
+            }
+        };
+
+        if (lessonKey && lessonData[lessonKey]) {
+            const currentScore = localStorage.getItem(lessonKey + "CurrentScore") || 0;
+            const bestScore = localStorage.getItem(lessonKey + "BestScore") || 0;
+let scores = JSON.parse(localStorage.getItem("quizScores")) || [];
+
+scores = scores.filter(function(item) {
+    return item.lesson !== lessonData[lessonKey].name;
+});
+
+scores.push({
+    lesson: lessonData[lessonKey].name,
+    score: bestScore + "/10"
+});
+
+localStorage.setItem("quizScores", JSON.stringify(scores));
+            document.getElementById("resultTitle").textContent = lessonData[lessonKey].title;
+            document.getElementById("lessonNameBreadcrumb").textContent = lessonData[lessonKey].name;
+            document.getElementById("currentScore").textContent = currentScore + "/10";
+            document.getElementById("bestScore").textContent = "Best Score " + bestScore + "/10";
+            document.getElementById("retakeBtn").href = lessonData[lessonKey].quizPage;
+
+            if (Number(currentScore) >= 8) {
+                document.getElementById("feedbackMsg").textContent = "Great Job! You did very well.";
+            } else {
+                document.getElementById("feedbackMsg").textContent = "Good Try! Review The Lesson Again To Improve Your Score.";
+            }
+        } else {
+            document.getElementById("resultTitle").textContent = "Quiz Result";
+            document.getElementById("lessonNameBreadcrumb").textContent = "Quiz";
+            document.getElementById("currentScore").textContent = "0/10";
+            document.getElementById("bestScore").textContent = "Best Score 0/10";
+            document.getElementById("feedbackMsg").textContent = "No quiz result found. Please take a quiz first.";
+            document.getElementById("retakeBtn").href = "courses.html";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maravella - Candle Making</title>
+    <link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header class="main-header">
+    <div class="logo-container">
+        <img src="images/logo.png" alt="Maravella Logo" width="120">
+        <h1>Maravella For Handicrafts</h1>
+    </div>
+
+    <div class="mission-statement">
+        <p>Our mission is to inspire creativity by teaching practical handicrafts through simple, step-by-step guidance.</p>
+    </div>
+</header>
+<nav class="main-nav">
+ <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Course Content</a></li>
+        <li><a href="about_us.html">About Us</a></li>
+        <li><a href="contact_us.html">Contact Us</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+</nav>
+<main class="lesson-container">
+<p class="breadcrumb">
+    <a href="index.html">Home</a> &gt;
+    <a href="courses.html">Course Content</a> &gt;
+    <strong>Candle Making - Page 1</strong>
+</p>
+    <h2 class="lesson-title">Candle Making</h2>
+
+    <p class="lesson-subtitle">Introduction</p>
+    <p class="lesson-intro">
+        Candle making is a creative and enjoyable craft that allows learners to design scented and decorative candles at home.
+        In this lesson, students will explore the main materials and tools needed to create a simple candle safely and neatly.
+    </p>
+
+    <p class="lesson-table-title">Materials &amp; Tools</p>
+
+    <table class="lesson-table">
+        <tr>
+            <th>Material</th>
+            <th>Quantity</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td>Wax</td>
+            <td>500g</td>
+            <td>Main ingredient for making the candle</td>
+        </tr>
+        <tr>
+            <td>Wick</td>
+            <td>1 Piece</td>
+            <td>Used to light the candle</td>
+        </tr>
+        <tr>
+            <td>Fragrance Oil</td>
+            <td>Few Drops</td>
+            <td>Adds scent to the candle</td>
+        </tr>
+        <tr>
+            <td>Container</td>
+            <td>1</td>
+            <td>Holds the melted wax</td>
+        </tr>
+    </table>
+
+    <div class="lesson-nav">
+        <a href="courses.html" class="lesson-btn back-btn">Back</a>
+        <span class="lesson-page-number">Page 1</span>
+        <a href="lesson3-page2.html" class="lesson-btn next-btn">Next</a>
+    </div>
+</main>
+<footer class="main-footer">
+    <div class="footer-left">
+	<div class="social-media">
+    <p>Find Us</p>
+
+    <a href="#">
+        <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="1"></circle>
+        </svg>
+    </a>
+
+    <a href="#">
+        <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <line x1="4" y1="4" x2="20" y2="20"></line>
+            <line x1="20" y1="4" x2="4" y2="20"></line>
+        </svg>
+    </a>
+
+    <a href="#">
+        <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+        </svg>
+    </a>
+</div>
+    </div>
+
+    <div class="footer-center">
+        <img src="images/logo.png" alt="Maravella Logo" width="120">
+        <p>&copy; 2026 Maravella. All Rights Reserved.</p>
+    </div>
+
+    <div class="footer-right">
+        <div class="contact-info">
+            <p>Contact info</p>
+            <p>Email: <a href="mailto:info@maravella.com">info@maravella.com</a></p>
+            <p>Phone: +966 5X XXX XXXX</p>
+        </div>
+    </div>
+</footer>
+<script>
+  setTimeout(function() {
+    alert("This lesson will teach you the basics of candle making and important safety tips. Don't forget to take the quiz after finishing the lesson!");
+  }, 3000);
+  const themeToggle = document.getElementById("themeToggle");
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+}
+
+if (themeToggle) {
+    if (document.body.classList.contains("dark-mode")) {
+        themeToggle.textContent = "Light Mode";
+    }
+
+    themeToggle.addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+            themeToggle.textContent = "Light Mode";
+        } else {
+            localStorage.setItem("theme", "light");
+            themeToggle.textContent = "Dark Mode";
+        }
+    });
+}
+</script>
+</body>
+</html>
